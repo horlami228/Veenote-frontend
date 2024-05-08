@@ -27,10 +27,11 @@ function Page() {
   console.log('username', username);
 
     useEffect(() => {
+      consoloe.log('The environment is', process.env.NEXT_PUBLIC_API_BASE_URL)
       console.log('fetching folders')
       const fetchFolders = async () => {
         try {
-          const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/user/folder/getAll`, {
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL || 'https://veenote-f4a5a6df8d69.herokuapp.com'}/user/folder/getAll`, {
             withCredentials: true,
           });
           console.log('response', response.data.data);
