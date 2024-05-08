@@ -57,8 +57,9 @@ function VoiceRecorder({onTranscriptionComplete}) {
             }
         };
 
+        console.log('the websocket is', process.env.NEXT_PUBLIC_WS_BASE_URL)
         // establish websocket connection
-        websocketRef.current = new WebSocket(`${process.env.NEXT_PUBLIC_WS_BASE_URL}`);
+        websocketRef.current = new WebSocket(`${process.env.NEXT_PUBLIC_WS_BASE_URL} || ""`);
         if (websocketRef.current) {
           console.log('WebSocket connection established.');
         } else {
