@@ -27,7 +27,7 @@ function Page() {
   console.log('username', username);
 
     useEffect(() => {
-      consoloe.log('The environment is', process.env.NEXT_PUBLIC_API_BASE_URL)
+      console.log('The environment is', process.env.NEXT_PUBLIC_API_BASE_URL)
       console.log('fetching folders')
       const fetchFolders = async () => {
         try {
