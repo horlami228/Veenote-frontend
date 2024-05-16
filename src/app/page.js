@@ -31,7 +31,7 @@ function Page() {
       console.log('fetching folders')
       const fetchFolders = async () => {
         try {
-          const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL || "https://veenote-f4a5a6df8d69.herokuapp.com/api/v1"}/user/folder/getAll`, {
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/user/folder/getAll`, {
             withCredentials: true,
           });
           console.log('response', response.data.data);

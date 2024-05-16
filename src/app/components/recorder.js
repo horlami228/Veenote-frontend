@@ -104,9 +104,6 @@ function VoiceRecorder({onTranscriptionComplete}) {
 
           // Check if the browser supports the desired audio MIME type
             const options = { mimeType: 'audio/webm;codecs=opus' }; // Opus is widely supported and good for voice
-            if (MediaRecorder.isTypeSupported('audio/wav')) {
-              options.mimeType = 'audio/wav';
-            }
             mediaRecorderRef.current = new MediaRecorder(stream, options);
             mediaRecorderRef.current.ondataavailable = handleDataAvailable;
             mediaRecorderRef.current.onstop = () => {
